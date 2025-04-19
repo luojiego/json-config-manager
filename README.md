@@ -1,5 +1,7 @@
 # JSON Configuration Editor
 
+[中文文档](README_CN.md)
+
 A web-based JSON configuration file editor that allows users to create, edit, view, and download JSON configuration files.
 
 ## Features
@@ -9,13 +11,13 @@ A web-based JSON configuration file editor that allows users to create, edit, vi
 - View JSON file contents
 - Download JSON files
 - Delete JSON files
-- Secure access control (password authentication required)
+- Simple password-based authentication for access control
 
 ## Tech Stack
 
 - Backend: Go (Gin framework)
 - Frontend: HTML, JavaScript
-- Database: For storing file metadata
+- Database: SQLite for storing file metadata
 - Storage: Local file system
 
 ## Installation & Running
@@ -34,8 +36,9 @@ A web-based JSON configuration file editor that allows users to create, edit, vi
 
 ## Usage Guide
 
-1. Password authentication is required when accessing the homepage
+1. Simple password authentication is implemented for accessing the homepage
 2. Add `?password=YOUR_PASSWORD` parameter to the URL for access
+   - Example: `http://localhost:8080?password=your_password`
 3. Main features:
    - Create new file: Click "New" button
    - Edit file: Select file and click "Edit"
@@ -54,12 +57,14 @@ A web-based JSON configuration file editor that allows users to create, edit, vi
 
 ## Security Notes
 
-- All access requires password authentication
+- Simple password-based authentication is implemented for basic access control
 - It's recommended to change the default password in production environment
 - All file operations have permission verification
+- For enhanced security, consider implementing more robust authentication methods in production
 
 ## Important Notes
 
 - Ensure sufficient disk space for storing JSON files
 - Regular backup of important configuration files is recommended
-- Do not use default password in public network environments 
+- Do not use default password in public network environments
+- This is a simple implementation for demonstration purposes 
